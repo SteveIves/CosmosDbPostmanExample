@@ -1,0 +1,1263 @@
+{
+	"info": {
+		"_postman_id": "f6cfab60-d6d7-4e26-9fb4-dd2c6b61d039",
+		"name": "Azure CosmosDB Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Databases",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "106294eb-85e1-4cd3-8f13-adc6d666a0fd",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d3392fe2-ca81-4173-a29a-a89ec602893e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Database - FamilyDB",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7cb1156a-e747-4590-beb0-3ea370172516",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7dd9ce64-20dd-4957-a00d-1f8ff7cb51d5",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"FamilyDB\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Database - FamilyDB",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ba998885-587f-4049-aac6-b0ea3805bc58",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6a6e2b2b-7f28-4816-8695-e33d4349a6b1",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get FamilyDB Collections",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0f95cd99-57ae-412e-b912-c6e0638232e1",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "08c066f2-31ef-4b5f-bfb1-858b538a548f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create FamilyDB Collection Families",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "43c0302f-969b-4831-be36-859371c3bae5",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "55674001-3189-43ca-8389-8074c7dcf845",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"Families\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get FamilyDB Collection Families",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6926f098-23ce-4afe-825e-bbfdf4c3249d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d101bd76-dba6-4959-9c72-524fe627e048",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Document - Wakefield Family",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3a50a31b-bca7-4d73-ac4b-a578467b1b95",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2dc65d34-c398-49d6-81fc-e6e665cf3200",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"WakefieldFamily\",\r\n    \"parents\": [\r\n        { \"familyName\": \"Wakefield\", \"givenName\": \"Robin\" },\r\n        { \"familyName\": \"Miller\", \"givenName\": \"Ben\" }\r\n    ],\r\n    \"children\": [\r\n        {\r\n            \"familyName\": \"Merriam\", \r\n            \"givenName\": \"Jesse\", \r\n            \"gender\": \"female\", \"grade\": 1,\r\n            \"pets\": [\r\n                { \"givenName\": \"Goofy\" },\r\n                { \"givenName\": \"Shadow\" }\r\n            ]\r\n        },\r\n        { \r\n            \"familyName\": \"Miller\", \r\n             \"givenName\": \"Lisa\", \r\n             \"gender\": \"female\", \r\n             \"grade\": 8 }\r\n    ],\r\n    \"address\": { \"state\": \"NY\", \"county\": \"Manhattan\", \"city\": \"NY\" },\r\n    \"creationDate\": 1431620462,\r\n    \"isRegistered\": false\r\n}"
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families/docs",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families",
+						"docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Document - Wakefield Family",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f200a4ae-4dd0-4dc7-9ee9-4367937bb7e4",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6617f9ee-9d3a-4487-8980-de1937ad0988",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families/docs/WakefieldFamily",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families",
+						"docs",
+						"WakefieldFamily"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Document - Wakefield Family",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e429aacd-dafe-4b55-a869-957678938f4c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "af179629-09f8-4596-ace1-a83c7f36cdf6",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"WakefieldFamily\",\r\n    \"parents\": [\r\n        { \"familyName\": \"Wakefield\", \"givenName\": \"Robin\" },\r\n        { \"familyName\": \"Miller\", \"givenName\": \"Ben\" },\r\n        { \"familyName\" : \"Lindsay\", \"givenName\": \"Steve\" }\r\n    ],\r\n    \"children\": [\r\n        {\r\n            \"familyName\": \"Merriam\", \r\n            \"givenName\": \"Jesse\", \r\n            \"gender\": \"female\", \"grade\": 1,\r\n            \"pets\": [\r\n                { \"givenName\": \"Goofy\" },\r\n                { \"givenName\": \"Shadow\" }\r\n            ]\r\n        },\r\n        { \r\n            \"familyName\": \"Miller\", \r\n             \"givenName\": \"Lisa\", \r\n             \"gender\": \"female\", \r\n             \"grade\": 8 }\r\n    ],\r\n    \"address\": { \"state\": \"NY\", \"county\": \"Manhattan\", \"city\": \"NY\" },\r\n    \"creationDate\": 1431620462,\r\n    \"isRegistered\": false\r\n}"
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families/docs/WakefieldFamily",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families",
+						"docs",
+						"WakefieldFamily"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Document - Andersen Family",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0471ec62-a8df-47a1-b80e-28cac8f532b9",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6e8a6c78-6787-4db4-bca8-2f1c9c93462c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"AndersenFamily\",\r\n    \"lastName\": \"Andersen\",\r\n    \"parents\": [\r\n       { \"firstName\": \"Thomas\" },\r\n       { \"firstName\": \"Mary Kay\"}\r\n    ],\r\n    \"children\": [\r\n       {\r\n           \"firstName\": \"Henriette Thaulow\", \"gender\": \"female\", \"grade\": 5,\r\n           \"pets\": [{ \"givenName\": \"Fluffy\" }]\r\n       }\r\n    ],\r\n    \"address\": { \"state\": \"WA\", \"county\": \"King\", \"city\": \"seattle\" },\r\n    \"creationDate\": 1431620472,\r\n    \"isRegistered\": true\r\n}"
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families/docs",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families",
+						"docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all documents",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "59998f39-9200-49ee-9b48-76d91be37ae1",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b8828018-edd6-4bb8-8859-45535a57b148",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families/docs",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families",
+						"docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Collection Family = Andersen",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fda65ef7-4e57-4893-b125-dd896fa706c8",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b20873c5-236f-4b62-90fb-e80dc90f0161",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					},
+					{
+						"key": "x-ms-documentdb-isquery",
+						"value": "true"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/query+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{      \r\n    \"query\": \"SELECT * FROM Families f WHERE f.id = @familyId\",     \r\n    \"parameters\": [          \r\n        {\"name\": \"@familyId\", \"value\": \"AndersenFamily\"}         \r\n    ] \r\n}"
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families/docs",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families",
+						"docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Collection with JOIN",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "19cfc15e-82cd-4013-ab8c-d302406bf4ba",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "956e12cf-bde7-4c5a-9492-01d19572d4e3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					},
+					{
+						"key": "x-ms-documentdb-isquery",
+						"value": "true"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/query+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{      \r\n    \"query\": \"SELECT \r\n                 f.id AS familyName, \r\n                 c.givenName AS childGivenName, \r\n                 c.firstName AS childFirstName, \r\n                 p.givenName AS petName \r\n              FROM Families f \r\n              JOIN c IN f.children \r\n              JOIN p in c.pets\",     \r\n    \"parameters\": [] \r\n}"
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families/docs",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families",
+						"docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Document Wakefield Family",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f067a991-ca42-4719-bf6a-8481d96c7396",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f14921f-3cf2-4b92-9ae1-95641f51ea29",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families/docs/WakefieldFamily",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families",
+						"docs",
+						"WakefieldFamily"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Document Andersen Family",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f067a991-ca42-4719-bf6a-8481d96c7396",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7f14921f-3cf2-4b92-9ae1-95641f51ea29",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families/docs/AndersenFamily",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families",
+						"docs",
+						"AndersenFamily"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Collection Families",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "40fc1763-4ddf-4c5b-84cf-546c8b8c110b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed58e957-21aa-481c-b44a-1b5a898af209",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB/colls/Families",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB",
+						"colls",
+						"Families"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Database FamilyDB",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e0eac1d4-9af4-45c6-85a0-20ae1b03e497",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2ab926ef-8e36-4103-83ac-5c37488b7fe8",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "{{CosmosDbApiVersion}}"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{RFC1123time}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{CosmosDbHost}}/dbs/FamilyDB",
+					"protocol": "https",
+					"host": [
+						"{{CosmosDbHost}}"
+					],
+					"path": [
+						"dbs",
+						"FamilyDB"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8c6f3f95-d5b8-4076-9065-773b1fa5b915",
+				"type": "text/javascript",
+				"exec": [
+					"// store our master key for documentdb",
+					"var mastKey = pm.variables.get(\"CosmosDbMasterKey\");",
+					"",
+					"console.log(\"mastKey = \" + mastKey);",
+					"",
+					"// store our date as RFC1123 format for the request",
+					"var today = new Date();",
+					"var UTCstring = today.toUTCString();",
+					"postman.setEnvironmentVariable(\"RFC1123time\", UTCstring);",
+					"",
+					"// Grab the request url",
+					"var url = request.url.trim(); ",
+					"console.log(\"request url = \" + url);",
+					"",
+					"// strip the url of the hostname up and leading slash",
+					"var strippedurl = url.replace(new RegExp('^https?://[^/]+/'),'/');",
+					"console.log (\"stripped Url = \" + strippedurl);",
+					"",
+					"// push the parts down into an array so we can determine if the call is on a specific item",
+					"// or if it is on a resource (odd would mean a resource, even would mean an item)",
+					"var strippedparts = strippedurl.split(\"/\");",
+					"var truestrippedcount = (strippedparts.length - 1);",
+					"console.log(truestrippedcount);",
+					"",
+					"// define resourceId/Type now so we can assign based on the amount of levels",
+					"var resourceId = \"\";",
+					"var resType = \"\";",
+					"",
+					"// its odd (resource request)",
+					"if (truestrippedcount % 2)",
+					"{",
+					"    console.log(\"odd\");",
+					"    // assign resource type to the last part we found.",
+					"    resType = strippedparts[truestrippedcount];",
+					"    console.log(resType);",
+					"    ",
+					"    if (truestrippedcount > 1)",
+					"    {",
+					"        // now pull out the resource id by searching for the last slash and substringing to it.",
+					"        var lastPart = strippedurl.lastIndexOf(\"/\");",
+					"        resourceId = strippedurl.substring(1,lastPart);",
+					"        console.log(resourceId);",
+					"    }",
+					"}",
+					"else // its even (item request on resource)",
+					"{",
+					"    console.log(\"even\");",
+					"    // assign resource type to the part before the last we found (last is resource id)",
+					"    resType = strippedparts[truestrippedcount - 1];",
+					"    console.log(\"resType\");",
+					"    // finally remove the leading slash which we used to find the resource if it was",
+					"    // only one level deep.",
+					"    strippedurl = strippedurl.substring(1);",
+					"    console.log(\"strippedurl\");",
+					"    // assign our resourceId",
+					"    resourceId = strippedurl;",
+					"    console.log(\"resourceId\");",
+					"}",
+					"",
+					"// assign our verb",
+					"var verb = request.method.toLowerCase();",
+					"",
+					"// assign our RFC 1123 date",
+					"var date = UTCstring.toLowerCase();",
+					"",
+					"// parse our master key out as base64 encoding",
+					"var key = CryptoJS.enc.Base64.parse(mastKey);",
+					"console.log(\"key = \" + key);",
+					"",
+					"// build up the request text for the signature so can sign it along with the key",
+					"var text = (verb || \"\").toLowerCase() + \"\\n\" + ",
+					"               (resType || \"\").toLowerCase() + \"\\n\" + ",
+					"               (resourceId || \"\") + \"\\n\" + ",
+					"               (date || \"\").toLowerCase() + \"\\n\" + ",
+					"               \"\" + \"\\n\";",
+					"console.log(\"text = \" + text);",
+					"",
+					"// create the signature from build up request text",
+					"var signature = CryptoJS.HmacSHA256(text, key);",
+					"console.log(\"sig = \" + signature);",
+					"",
+					"// back to base 64 bits",
+					"var base64Bits = CryptoJS.enc.Base64.stringify(signature);",
+					"console.log(\"base64bits = \" + base64Bits);",
+					"",
+					"// format our authentication token and URI encode it.",
+					"var MasterToken = \"master\";",
+					"var TokenVersion = \"1.0\";",
+					"auth = encodeURIComponent(\"type=\" + MasterToken + \"&ver=\" + TokenVersion + \"&sig=\" + base64Bits);",
+					"console.log(\"auth = \" + auth);",
+					"",
+					"// set our auth token enviornmental variable.",
+					"postman.setEnvironmentVariable(\"authToken\", auth);",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3d5e7186-a640-4de8-938a-ff644ace88d0",
+				"type": "text/javascript",
+				"exec": [
+					"postman.clearEnvironmentVariable(\"RFC1123time\");",
+					"postman.clearEnvironmentVariable(\"masterKey\");",
+					"postman.clearEnvironmentVariable(\"authToken\");"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9412286c-0d35-418c-a58b-55c6cfba8691",
+			"key": "CosmosDbApiVersion",
+			"value": "2017-02-22",
+			"type": "string"
+		},
+		{
+			"id": "472222de-fc9a-4ecb-8494-61357f6e7fe4",
+			"key": "CosmosDbHost",
+			"value": "?????.documents.azure.com",
+			"type": "string"
+		},
+		{
+			"id": "8511be06-f6b9-4b13-a30b-f63367050481",
+			"key": "CosmosDbMasterKey",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
